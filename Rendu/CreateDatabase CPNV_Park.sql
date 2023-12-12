@@ -36,7 +36,7 @@ CREATE TABLE paymentMethods (
 CREATE TABLE purchasingWays (
     id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    CONSTRAINT UQ_purchasingWays_Id UNIQUE (id),
+    CONSTRAINT UQ_purchasingWay_Id UNIQUE (id),
     CONSTRAINT UQ_purchasingWays_Name UNIQUE (name)
 );
 
@@ -48,11 +48,11 @@ CREATE TABLE transactions (
     number VARCHAR(30) NOT NULL,
     dateTime DATETIME NULL,
     paymentMethod_id INT NOT NULL,
-    purchasingWays_id INT NOT NULL,
+    purchasingWay_id INT NOT NULL,
     CONSTRAINT UQ_transactions_Id UNIQUE (id),
     CONSTRAINT UQ_transactions_Number UNIQUE (number),
     CONSTRAINT FK_transactions_paymentMethods FOREIGN KEY (paymentMethod_id) REFERENCES paymentMethods (id),
-    CONSTRAINT FK_transactions_purchasingWays FOREIGN KEY (purchasingWays_id) REFERENCES purchasingWays (id)
+    CONSTRAINT FK_transactions_purchasingWays FOREIGN KEY (purchasingWay_id) REFERENCES purchasingWays (id)
 );
 
 -- -----------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE transactions (
 CREATE TABLE fares (
     id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    ageRangeBegining INT NULL,
+    ageRangeBeginning INT NULL,
     ageRangeEnd INT NULL,
     price DECIMAL(5,2) NOT NULL,
     CONSTRAINT UQ_fares_Id UNIQUE (id),
@@ -150,15 +150,16 @@ CREATE TABLE stands (
     name VARCHAR(40) NOT NULL,
     zone_id INT NOT NULL,
     type_id INT NOT NULL,
-    CONSTRAINT UQ_stands_Id UNIQUE (id),
+    CONSTRAINT UQ_stand_Id UNIQUE (id),
     CONSTRAINT UQ_stands_Name UNIQUE (name),
     CONSTRAINT FK_stands_zones FOREIGN KEY (zone_id) REFERENCES zones (id),
     CONSTRAINT FK_stands_types FOREIGN
 KEY (type_id) REFERENCES types (id)
 );
 
+-- -----------------------------------------------------
 -- Table cpnv_park.employees
-
+-- -----------------------------------------------------
 CREATE TABLE employees (
 id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 lastName VARCHAR(50) NOT NULL,
@@ -173,17 +174,18 @@ AVS VARCHAR(16) NOT NULL,
 role_id INT NOT NULL,
 attraction_id INT NULL,
 restaurant_id INT NULL,
-stands_id INT NULL,
+stand_id INT NULL,
 CONSTRAINT UQ_employees_Id UNIQUE (id),
 CONSTRAINT UQ_employees_AVS UNIQUE (AVS),
 CONSTRAINT FK_employees_roles FOREIGN KEY (role_id) REFERENCES roles (id),
 CONSTRAINT FK_employees_attractions FOREIGN KEY (attraction_id) REFERENCES attractions (id) ON DELETE SET NULL,
 CONSTRAINT FK_employees_restaurants FOREIGN KEY (restaurant_id) REFERENCES restaurants (id) ON DELETE SET NULL,
-CONSTRAINT FK_employees_stands FOREIGN KEY (stands_id) REFERENCES stands (id) ON DELETE SET NULL
+CONSTRAINT FK_employees_stands FOREIGN KEY (stand_id) REFERENCES stands (id) ON DELETE SET NULL
 );
 
+-- -----------------------------------------------------
 -- Table cpnv_park.products
-
+-- -----------------------------------------------------
 CREATE TABLE products (
 id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 number VARCHAR(30) NOT NULL,
@@ -193,18 +195,9 @@ CONSTRAINT UQ_products_Id UNIQUE (id),
 CONSTRAINT UQ_products_Number UNIQUE (number)
 );
 
--- Table cpnv_park.stands_sell_products
-
-CREATE TABLE stands_sell_products (
-stands_id INT NOT NULL,
-products_id INT NOT NULL,
-PRIMARY KEY (stands_id, products_id),
-CONSTRAINT FK_stands_sell_products_stands FOREIGN KEY (stands_id) REFERENCES stands (id),
-CONSTRAINT FK_stands_sell_products_products FOREIGN KEY (products_id) REFERENCES products (id)
-);
-
+-- -----------------------------------------------------
 -- Table cpnv_park.stands_contain_products
-
+-- -----------------------------------------------------
 CREATE TABLE stands_contain_products (
 id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 quantity INT NULL,
