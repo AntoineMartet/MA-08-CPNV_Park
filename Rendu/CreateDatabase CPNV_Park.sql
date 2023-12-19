@@ -1,6 +1,3 @@
--- SQL Server does not use the ENGINE clause, so it's removed
--- AUTO_INCREMENT is replaced with IDENTITY(1,1) for SQL Server
-
 -- -----------------------------------------------------
 -- Schema cpnv_park
 -- -----------------------------------------------------
