@@ -463,6 +463,8 @@ quantity : via la fonction ALEA.ENTRE.BORNES d’Excel
 dateOfUse : via la fonction ALEA.ENTRE.BORNES d’Excel
 transaction_id : via la fonction ALEA.ENTRE.BORNES d’Excel
 fare_id : via la fonction ALEA.ENTRE.BORNES d’Excel
+
+NB : Date dans le passé pour dateOfUse pour de nombreux INSERT donc produira des erreurs à cause de la contrainte CHK_dateOfUse_NotPast.
 */
 INSERT INTO transactions_contain_fares (quantity,dateOfUse, transaction_id, fare_id) VALUES (1, '2023-12-29', 79, 5);
 INSERT INTO transactions_contain_fares (quantity,dateOfUse, transaction_id, fare_id) VALUES (5, '2024-02-23', 24, 4);
@@ -961,7 +963,7 @@ type_id : manuellement
 INSERT INTO stands (name, zone_id, type_id) VALUES ('Icescrums', 5, 2);
 INSERT INTO stands (name, zone_id, type_id) VALUES ('Chocolatey', 2, 2);
 INSERT INTO stands (name, zone_id, type_id) VALUES ('OSI : Seven Layers Cakes', 6, 2);
-INSERT INTO stands (name, zone_id, type_id) VALUES ('Bits & Pieces', 4, 2);
+INSERT INTO stands (name, zone_id, type_id) VALUES ('Bits & Pieces', 4, 4);
 INSERT INTO stands (name, zone_id, type_id) VALUES ('PowerToys', 5, 4);
 INSERT INTO stands (name, zone_id, type_id) VALUES ('Ruby On Nails', 1, 4);
 INSERT INTO stands (name, zone_id, type_id) VALUES ('ROM : Read-Only Memories', 3, 4);
@@ -1271,8 +1273,10 @@ INSERT INTO products (number, name, price) VALUES ('bk_6', 'Churro', '7');
 quantity : via la fonction ALEA.ENTRE.BORNES d’Excel
 stand_id : manuellement, pour des raisons de cohérence entre le stand et les produits qu’il contien 
 product_id : partiellement via la fonction ALEA.ENTRE.BORNES d’Excel et partiellement manuellement, pour des raisons de cohérence
+
+NB : Valeur négative pour quantity pour le 1er INSERT donc produira une erreur à cause de la contrainte CHK_quantity_Positive.
 */
-INSERT INTO stands_contain_products (quantity, stand_id, product_id) VALUES (0, 1, 27);
+INSERT INTO stands_contain_products (quantity, stand_id, product_id) VALUES (-1, 1, 27);
 INSERT INTO stands_contain_products (quantity, stand_id, product_id) VALUES (7, 1, 28);
 INSERT INTO stands_contain_products (quantity, stand_id, product_id) VALUES (48, 1, 29);
 INSERT INTO stands_contain_products (quantity, stand_id, product_id) VALUES (8, 1, 30);

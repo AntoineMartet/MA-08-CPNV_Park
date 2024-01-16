@@ -68,6 +68,7 @@ CREATE TABLE fares (
 -- -----------------------------------------------------
 -- Table cpnv_park.transactions_contain_fares
 -- -----------------------------------------------------
+-- La contrainte CHK_dateOfUse_NotPast vérifie que la date d'utilisation du billet se trouve aujourd'hui ou dans le futur
 CREATE TABLE transactions_contain_fares (
     id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     quantity INT NOT NULL,
@@ -76,7 +77,8 @@ CREATE TABLE transactions_contain_fares (
     fare_id INT NOT NULL,
     CONSTRAINT UQ_transactions_contain_fares_Id UNIQUE (id),
     CONSTRAINT FK_transactions_contain_fares_transactions FOREIGN KEY (transaction_id) REFERENCES transactions (id) ON DELETE CASCADE,
-    CONSTRAINT FK_transactions_contain_fares_fares FOREIGN KEY (fare_id) REFERENCES fares (id) ON DELETE NO ACTION
+    CONSTRAINT FK_transactions_contain_fares_fares FOREIGN KEY (fare_id) REFERENCES fares (id) ON DELETE NO ACTION,
+	CONSTRAINT CHK_dateOfUse_NotPast CHECK (dateOfUse >= CONVERT(date, GETDATE()))
 );
 
 -- -----------------------------------------------------
@@ -195,6 +197,7 @@ CONSTRAINT UQ_products_Number UNIQUE (number)
 -- -----------------------------------------------------
 -- Table cpnv_park.stands_contain_products
 -- -----------------------------------------------------
+-- La contrainte CHK_quantity_Positive vérifie que la quantité d'un produit dans un stand est nulle ou positive.
 CREATE TABLE stands_contain_products (
 id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 quantity INT NULL,
@@ -202,5 +205,6 @@ stand_id INT NOT NULL,
 product_id INT NOT NULL,
 CONSTRAINT UQ_stands_contain_products_Id UNIQUE (id),
 CONSTRAINT FK_stands_contain_products_stands FOREIGN KEY (stand_id) REFERENCES stands (id) ON DELETE CASCADE,
-CONSTRAINT FK_stands_contain_products_products FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE
+CONSTRAINT FK_stands_contain_products_products FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE,
+CONSTRAINT CHK_quantity_Positive CHECK (quantity >= 0)
 );

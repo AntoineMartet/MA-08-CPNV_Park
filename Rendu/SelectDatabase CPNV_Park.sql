@@ -48,7 +48,7 @@ GO
 SELECT products.name AS "Produit", 
 stands_contain_products.quantity AS  "Quantité",
 stands.name AS "Stand",
-types.name AS "Type",
+types.name AS "Type de stand",
 zones.name AS "Zone"
 FROM stands
 INNER JOIN zones ON stands.zone_id = zones.id
