@@ -906,26 +906,26 @@ lastCheckDate : concaténation d’une date (via la fonction ALEA.ENTRE.BORNES d
 https://catonmat.net/tools/generate-random-clock-times 
 zone_id : manuellement
 */
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Foreach Loop', 25, 140, NULL, '2023-07-13', 1);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Namespaceship', 15, 140, NULL, '2023-10-09', 1);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Infinite ZIPLine', 8, 100, NULL, '2023-10-28', 1);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('TDD : Test Your Limits', 12, NULL, NULL, '2023-09-06', 1);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Beyond The LAN', 29, NULL, NULL, '2023-09-26', 2);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Dark VPN Tunnel', 25, 100, NULL, '2023-08-02', 2);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Coaxial Rollercoaster', 10, 140, 190, '2023-12-09', 2);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Breaking The Firewall', 14, NULL, NULL, '2023-10-23', 2);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Haunted Windows 2000 Server', 17, NULL, NULL, '2023-10-20', 3);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Lords of the Pings', 30, NULL, NULL, '2023-11-18', 3);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Fast Travel : The Universal Serial Bus', 29, NULL, NULL, '2023-08-26', 3);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Really Fast Travel : The Nonvolatile Memory Express', 8, 140, NULL, '2023-08-11', 3);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Treasure Island : The Foreign Key', 28, NULL, 190, '2023-10-16', 4);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Great Cascade', 9, NULL, NULL, '2023-11-20', 4);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Escape The Constraints', 4, NULL, NULL, '2023-08-19', 4);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Waterfall : Test Your Agility', 10, NULL, NULL, '2023-06-15', 5);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Sprint For Your Life', 16, 140, NULL, '2023-10-27', 5);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Cascading With Style', 4, NULL, NULL, '2023-08-19', 6);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Balsamiq Recipes : Make Your Own Meal', 27, NULL, NULL, '2023-09-27', 6);
-INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Layers of Fear - Photoshop Edition', 26, NULL, NULL, '2023-08-01', 6);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Foreach Loop', 25, 140, NULL, '2023-07-13 11:37:04', 1);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Namespaceship', 15, 140, NULL, '2023-10-09 16:55:04', 1);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Infinite ZIPLine', 8, 100, NULL, '2023-10-28 15:53:15', 1);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('TDD : Test Your Limits', 12, NULL, NULL, '2023-09-06 12:15:34', 1);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Beyond The LAN', 29, NULL, NULL, '2023-09-26 17:05:08', 2);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Dark VPN Tunnel', 25, 100, NULL, '2023-08-02 08:00:00', 2);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Coaxial Rollercoaster', 10, 140, 190, '2023-12-09 07:25:55', 2);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Breaking The Firewall', 14, NULL, NULL, '2023-10-23 06:17:52', 2);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Haunted Windows 2000 Server', 17, NULL, NULL, '2023-10-20 10:54:23', 3);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Lords of the Pings', 30, NULL, NULL, '2023-11-18 09:51:51', 3);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Fast Travel : The Universal Serial Bus', 29, NULL, NULL, '2023-08-26 12:03:22', 3);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Really Fast Travel : The Nonvolatile Memory Express', 8, 140, NULL, '2023-08-11 15:12:44', 3);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Treasure Island : The Foreign Key', 28, NULL, 190, '2023-10-16 19:00:05', 4);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Great Cascade', 9, NULL, NULL, '2023-11-20 16:27:03', 4);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Escape The Constraints', 4, NULL, NULL, '2023-08-19 11:42:15', 4);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Waterfall : Test Your Agility', 10, NULL, NULL, '2023-06-15 08:59:16', 5);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Sprint For Your Life', 16, 140, NULL, '2023-10-27 13:13:13', 5);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Cascading With Style', 4, NULL, NULL, '2023-08-19 11:11:11', 6);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('The Balsamiq Recipes : Make Your Own Meal', 27, NULL, NULL, '2023-09-27 09:26:04', 6);
+INSERT INTO attractions (name, capacity, minHeight, maxHeight, lastCheckDate, zone_id) VALUES ('Layers of Fear - Photoshop Edition', 26, NULL, NULL, '2023-08-01 12:06:04', 6);
 
 -- -----------------------------------------------------
 -- Table cpnv_park.restaurants
