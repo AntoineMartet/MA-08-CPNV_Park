@@ -11,6 +11,22 @@ BEGIN
 END
 GO
 
+CREATE TABLE #ResultSet (Directory varchar(200)) -- Temporary table (name starts with #) -> will be automatically destroyed at the end of the session
+ 
+INSERT INTO #ResultSet EXEC master.sys.xp_subdirs 'C:\' -- Stored procedure that lists subdirectories
+ 
+IF NOT EXISTS (Select * FROM #ResultSet where Directory = 'DATA')
+	EXEC master.sys.xp_create_subdir 'C:\DATA\' -- create DATA
+ 
+DELETE FROM #ResultSet -- start over for MSSQL subdir
+INSERT INTO #ResultSet EXEC master.sys.xp_subdirs 'C:\DATA'
+ 
+IF NOT EXISTS (Select * FROM #ResultSet where Directory = 'MSSQL')
+	EXEC master.sys.xp_create_subdir 'C:\DATA\MSSQL'
+ 
+DROP TABLE #ResultSet -- Explicitely delete it because the script may be executed multiple times during the same session
+GO
+
 CREATE DATABASE cpnv_park;
 GO
 
